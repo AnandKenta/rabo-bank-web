@@ -8,9 +8,9 @@ describe('ValidateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ValidateComponent ]
+      declarations: [ValidateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +22,11 @@ describe('ValidateComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit Clear Data on click clear button', () => {
+    spyOn(component.Clear, 'emit');
+    component.clearData();
+    expect(component.Clear.emit).toHaveBeenCalled();
+  });
+
 });

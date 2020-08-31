@@ -7,7 +7,6 @@ import { ReboServicesService } from '../services/rebo-services.service'
   styleUrls: ['./validate.component.scss']
 })
 export class ValidateComponent implements OnInit {
-  @Output() onValidateRecords: EventEmitter<any> = new EventEmitter();
   @Output() Clear: EventEmitter<any> = new EventEmitter();
   @ViewChild('inputFileTaken', { static: false }) InputVar: ElementRef;
   resultResponse: any = [];
@@ -38,7 +37,7 @@ export class ValidateComponent implements OnInit {
         this.statement = Object.assign(new Statement(), res)
       }).catch((error) => {
         console.log(error)
-        if(error.message){
+        if (error.message) {
           alert(error.message);
         }
       });
