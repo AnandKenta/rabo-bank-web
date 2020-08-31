@@ -1,0 +1,19 @@
+<div class="col-xs-12 col-md-5 validate-section">
+    <div class="col-xs-12">
+        <label for="fileUploaded">Upload the JSON file: </label>
+        <input accept=".json" #inputFileTaken class="col-xs-6" type='file' id="fileUploaded" (change)='ReadFile($event)'>
+    </div>
+    <br>
+    <div class="col-xs-12 validate-button">
+        <button (click)="submitData()">Submit</button>
+        <button (click)="clearData()">Clear</button>
+    </div>
+</div>
+<div *ngIf="statement">
+    <p>Result: {{ statement.result}}</p>
+    <ul >
+        <li *ngFor="let errorRecord of statement.errorRecords">
+            reference: {{ errorRecord.reference }} - accountNumber: {{ errorRecord.accountNumber }}
+        </li>
+      </ul>
+</div>
