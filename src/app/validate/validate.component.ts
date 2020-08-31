@@ -38,6 +38,9 @@ export class ValidateComponent implements OnInit {
         this.statement = Object.assign(new Statement(), res)
       }).catch((error) => {
         console.log(error)
+        if(error.message){
+          alert(error.message);
+        }
       });
   }
 
